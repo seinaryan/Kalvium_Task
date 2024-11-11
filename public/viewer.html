@@ -1,0 +1,85 @@
+<!-- public/viewer.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Co-Viewer</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-brand">PDF Co-Viewer</div>
+    <div class="navbar-links">
+      <button id="help-btn">Help</button>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <!-- Presenter Upload Form -->
+      <div id="upload-section" style="display: none;">
+        <h3>Upload a PDF</h3>
+        <form id="upload-form" enctype="multipart/form-data">
+          <label for="pdf-file" class="custom-file-upload">
+            <i class="fas fa-cloud-upload-alt"></i> Choose File
+          </label>
+          <input type="file" id="pdf-file" accept="application/pdf" required>
+          <span id="file-selected">No file chosen</span>
+          <button type="submit">Upload</button>
+        </form>
+      </div>
+
+      <!-- Presenter PDF Selection -->
+      <div id="pdf-selection-section" style="display: none;">
+        <h3>Select a PDF</h3>
+        <ul id="pdf-list"></ul>
+        <div class="button-group">
+          <button id="refresh-pdf-list">Refresh List</button>
+          <button id="clear-all-files">Clear All Recent Files</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Message Area -->
+      <div id="message-area"></div>
+
+      <!-- PDF Viewer Canvas -->
+      <canvas id="pdf-render"></canvas>
+
+      <!-- Controls (visible to presenter only) -->
+      <div id="controls" style="display: none;">
+        <button id="prev-page">Previous</button>
+        <span>Page: <span id="page-num"></span> / <span id="page-count"></span></span>
+        <button id="next-page">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Font Awesome for Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <!-- Include PDF.js from CDNJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <!-- Set the workerSrc property -->
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+  </script>
+  <!-- Include Socket.io -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- Your custom script -->
+  <script>
+    // Get the role from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const role = urlParams.get('role');
+
+    // Set the admin status based on the role
+    window.isPresenter = role === 'presenter';
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

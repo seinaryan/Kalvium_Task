@@ -1,0 +1,225 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3 {
+    font-weight: 400;
+    color: #333;
+    margin: 20px 0;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  button {
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  .navbar-links button {
+    margin-left: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: #0069d9;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-links button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Landing Page Styles */
+  .landing-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto;
+    text-align: center;
+  }
+  
+  #role-selection {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  #role-selection button {
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 10px;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  #role-selection button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Viewer Page Layout */
+  .container {
+    display: flex;
+    height: calc(100vh - 60px); /* Adjust height according to navbar height */
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .sidebar h3 {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  
+  #upload-section,
+  #pdf-selection-section {
+    margin-bottom: 30px;
+  }
+  
+  #upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #upload-form input[type="file"] {
+    display: none;
+  }
+  
+  .custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #6c757d;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #5a6268;
+  }
+  
+  #file-selected {
+    margin-top: 10px;
+    font-style: italic;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .button-group button {
+    flex: 1;
+    margin-right: 5px;
+  }
+  
+  .button-group button:last-child {
+    margin-right: 0;
+  }
+  
+  #clear-all-files {
+    background-color: #dc3545;
+  }
+  
+  #clear-all-files:hover {
+    background-color: #c82333;
+  }
+  
+  /* Main Content Styles */
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  #pdf-render {
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    max-width: 100%;
+    display: block;
+  }
+  
+  #controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  #controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 0 10px;
+    background-color: #28a745;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  #controls button:hover {
+    background-color: #218838;
+  }
+  
+  #controls span {
+    font-size: 16px;
+  }
+  
+  /* Message Area Styles */
+  #message-area {
+    text-align: center;
+    margin: 20px;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  /* Responsive Navbar */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-links {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+  }
+  

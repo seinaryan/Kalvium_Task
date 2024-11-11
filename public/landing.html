@@ -1,0 +1,30 @@
+<!-- public/landing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Co-Viewer - Welcome</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="landing-container">
+    <h1>Welcome to the PDF Co-Viewer</h1>
+    <p>Please select your role:</p>
+    <div id="role-selection">
+      <button id="presenter-btn">I am the Presenter</button>
+      <button id="viewer-btn">I am a Viewer</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('presenter-btn').addEventListener('click', () => {
+      window.location.href = '/viewer.html?role=presenter';
+    });
+
+    document.getElementById('viewer-btn').addEventListener('click', () => {
+      window.location.href = '/viewer.html?role=viewer';
+    });
+  </script>
+</body>
+</html>
